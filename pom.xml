@@ -4,7 +4,7 @@
   <groupId>com.sample</groupId>
   <artifactId>My_project</artifactId>
   <packaging>war</packaging>
-  <version>1.0.01</version>
+  <version>1.01</version>
   <name>My_project Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>${project.artifactId}</finalName>
+    <finalName>${project.artifactId}-${project.version}</finalName>
     <plugins>
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
