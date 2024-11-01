@@ -1,0 +1,30 @@
+---
+- name: webserver setup
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install httpd
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+
+    - name: Start httpd service
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
+
+- name: dbserver setup
+  hosts: dbservers
+  become: yes
+  tasks:
+    - name: Install the git 
+      ansible.builtin.yum:
+        name: git
+        state: present
+
+    - name: start git-server
+      ansible.builtin.service:
+        name: git
+        state: started
+        enabled: yes
